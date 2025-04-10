@@ -1,0 +1,10 @@
+.primary{
+
+    font-family: 'Arial';
+    color: green;
+}
+
+.ternary{
+    padding:'20px';
+    background-color:green;
+}

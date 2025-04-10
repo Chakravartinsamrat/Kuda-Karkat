@@ -1,0 +1,141 @@
+<div
+  class="view-lines monaco-mouse-cursor-text"
+  role="presentation"
+  aria-hidden="true"
+  data-mprt="7"
+  style="
+    position: absolute;
+    font-family: Consolas, 'Courier New', monospace;
+    font-weight: normal;
+    font-size: 13px;
+    font-feature-settings: 'liga' 0, 'calt' 0;
+    line-height: 18px;
+    letter-spacing: 0px;
+    width: 552px;
+    height: 1312px;
+  "
+>
+  <div style="top: 890px; height: 18px" class="view-line">
+    <span
+      ><span class="mtk1"
+        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;root1&nbsp;=&nbsp;</span
+      ><span class="mtk4">self</span
+      ><span class="mtk1">._find(node1)</span></span
+    >
+  </div>
+  <div style="top: 908px; height: 18px" class="view-line">
+    <span
+      ><span class="mtk1"
+        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;root2&nbsp;=&nbsp;</span
+      ><span class="mtk4">self</span
+      ><span class="mtk1">._find(node2)</span></span
+    >
+  </div>
+  <div style="top: 926px; height: 18px" class="view-line">
+    <span><span></span></span>
+  </div>
+  <div style="top: 944px; height: 18px" class="view-line">
+    <span
+      ><span class="mtk1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+      ><span class="mtk3"
+        >#&nbsp;If&nbsp;the&nbsp;two&nbsp;nodes&nbsp;are&nbsp;already&nbsp;in&nbsp;the&nbsp;same&nbsp;compone</span
+      ><span class="mtk3">nt,&nbsp;do&nbsp;nothing</span></span
+    >
+  </div>
+  <div style="top: 962px; height: 18px" class="view-line">
+    <span
+      ><span class="mtk1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+      ><span class="mtk13">if</span
+      ><span class="mtk1">&nbsp;root1&nbsp;==&nbsp;root2:</span></span
+    >
+  </div>
+  <div style="top: 980px; height: 18px" class="view-line">
+    <span
+      ><span class="mtk1"
+        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+      ><span class="mtk13">return</span></span
+    >
+  </div>
+  <div style="top: 998px; height: 18px" class="view-line">
+    <span><span></span></span>
+  </div>
+  <div style="top: 1016px; height: 18px" class="view-line">
+    <span
+      ><span class="mtk1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+      ><span class="mtk3"
+        >#&nbsp;Union&nbsp;by&nbsp;depth:&nbsp;ensure&nbsp;the&nbsp;root&nbsp;of&nbsp;the&nbsp;deeper&nbsp;tr</span
+      ><span class="mtk3">ee&nbsp;becomes&nbsp;the&nbsp;</span></span
+    >
+  </div>
+  <div style="top: 1034px; height: 18px" class="view-line">
+    <span><span class="mtk3">parent</span></span>
+  </div>
+  <div style="top: 1052px; height: 18px" class="view-line">
+    <span
+      ><span class="mtk1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+      ><span class="mtk13">if</span><span class="mtk1">&nbsp;</span
+      ><span class="mtk4">self</span
+      ><span class="mtk1">.depth[root1]&nbsp;&lt;&nbsp;</span
+      ><span class="mtk4">self</span
+      ><span class="mtk1">.depth[root2]:</span></span
+    >
+  </div>
+  <div style="top: 1070px; height: 18px" class="view-line">
+    <span
+      ><span class="mtk1"
+        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;root1,&nbsp;root2&nbsp;=&nbsp;root2,&nbsp;root1</span
+      ></span
+    >
+  </div>
+  <div style="top: 1088px; height: 18px" class="view-line">
+    <span><span></span></span>
+  </div>
+  <div style="top: 1106px; height: 18px" class="view-line">
+    <span
+      ><span class="mtk1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+      ><span class="mtk3"
+        >#&nbsp;Merge&nbsp;the&nbsp;two&nbsp;components&nbsp;by&nbsp;making&nbsp;root1&nbsp;the&nbsp;par</span
+      ><span class="mtk3">ent&nbsp;of&nbsp;root2</span></span
+    >
+  </div>
+  <div style="top: 1124px; height: 18px" class="view-line">
+    <span
+      ><span class="mtk1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+      ><span class="mtk4">self</span
+      ><span class="mtk1">.parent[root2]&nbsp;=&nbsp;root1</span></span
+    >
+  </div>
+  <div style="top: 1142px; height: 18px" class="view-line">
+    <span><span></span></span>
+  </div>
+  <div style="top: 1160px; height: 18px" class="view-line">
+    <span
+      ><span class="mtk1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+      ><span class="mtk3"
+        >#&nbsp;If&nbsp;both&nbsp;components&nbsp;had&nbsp;the&nbsp;same&nbsp;depth,&nbsp;increase&nbsp;</span
+      ><span class="mtk3">the&nbsp;depth&nbsp;of&nbsp;</span></span
+    >
+  </div>
+  <div style="top: 1178px; height: 18px" class="view-line">
+    <span><span class="mtk3">the&nbsp;new&nbsp;root</span></span>
+  </div>
+  <div style="top: 1196px; height: 18px" class="view-line">
+    <span
+      ><span class="mtk1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+      ><span class="mtk13">if</span><span class="mtk1">&nbsp;</span
+      ><span class="mtk4">self</span
+      ><span class="mtk1">.depth[root1]&nbsp;==&nbsp;</span
+      ><span class="mtk4">self</span
+      ><span class="mtk1">.depth[root2]:</span></span
+    >
+  </div>
+  <div style="top: 1214px; height: 18px" class="view-line">
+    <span
+      ><span class="mtk1"
+        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+      ><span class="mtk4">self</span
+      ><span class="mtk1">.depth[root1]&nbsp;+=&nbsp;</span
+      ><span class="mtk7">1</span></span
+    >
+  </div>
+</div>

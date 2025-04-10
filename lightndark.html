@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Theme Showcase</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/3.3.3/tailwind.min.js"></script>
+  <style>
+    :root {
+      color-scheme: light dark;
+    }
+    
+    body {
+      font-family: 'DM Sans', sans-serif;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    
+    .theme-light {
+      --primary: #205781;
+      --secondary: #4F959D;
+      --tertiary: #4F959D;
+      --primary-container: #98D2C0;
+      --secondary-container: #F6F8D5;
+      --tertiary-container: #F6F8D5;
+      --background: #F6F8D5;
+      --surface: #F6F8D5;
+      --surface-container: #E8EACB;
+      --on-primary: #FFFFFF;
+      --on-secondary: #FFFFFF;
+      --on-tertiary: #FFFFFF;
+      --on-background: #121212;
+      --on-surface: #121212;
+      --on-primary-container: #0A1E2B;
+      --on-secondary-container: #1A3235;
+      --on-tertiary-container: #1A3235;
+      --outline: #6F797A;
+    }
+    
+    .theme-dark {
+      --primary: #98D2C0;
+      --secondary: #D89216;
+      --tertiary: #D89216;
+      --primary-container: #374045;
+      --secondary-container: #374045;
+      --tertiary-container: #374045;
+      --background: #2C061F;
+      --surface: #2C061F;
+      --surface-container: #321B2A;
+      --on-primary: #2C061F;
+      --on-secondary: #2C061F;
+      --on-tertiary: #2C061F;
+      --on-background: #E1D89F;
+      --on-surface: #E1D89F;
+      --on-primary-container: #B8F0DE;
+      --on-secondary-container: #E1D89F;
+      --on-tertiary-container: #E1D89F;
+      --outline: #8A9597;
+    }
+    
+    .card {
+      transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+    }
+    
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+    
+    .btn {
+      transition: all 0.25s cubic-bezier(0.05, 0.7, 0.1, 1);
+    }
+    
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+    
+    .btn:active {
+      transform: translateY(0);
+    }
+    
+    @media (prefers-color-scheme: dark) {
+      body:not(.theme-light) {
+        background-color: var(--background);
+        color: var(--on-background);
+      }
+    }
+  </style>
+</head>
+<body class="theme-light">
+  <div class="min-h-screen flex flex-col" style="background-color: var(--background); color: var(--on-background);">
+    <!-- Navigation -->
+    <header class="sticky top-0 z-10 shadow-elevation1" style="background-color: var(--surface); color: var(--on-surface);">
+      <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-2">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background-color: var(--primary); color: var(--on-primary);">
+            <span class="text-xl font-bold">TS</span>
+          </div>
+          <h1 class="text-titleLarge font-medium">Theme Showcase</h1>
+        </div>
+        <div class="flex items-center gap-4">
+          <button id="theme-toggle" class="btn px-4 py-2 rounded-full text-labelLarge" style="background-color: var(--primary-container); color: var(--on-primary-container);">Toggle Theme</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow container mx-auto px-4 py-8">
+      <!-- Hero Section -->
+      <section class="mb-16 rounded-large p-8" style="background-color: var(--primary-container); color: var(--on-primary-container);">
+        <div class="max-w-3xl">
+          <h1 class="text-displayMedium mb-4">Beautiful Theme Implementation</h1>
+          <p class="text-bodyLarge mb-6">This showcase demonstrates the implementation of your custom color theme with various UI elements and components.</p>
+          <button class="btn px-6 py-3 rounded-full text-labelLarge" style="background-color: var(--primary); color: var(--on-primary);">Get Started</button>
+        </div>
+      </section>
+
+      <!-- Typography Section -->
+      <section class="mb-16">
+        <h2 class="text-headlineMedium mb-6" style="color: var(--primary);">Typography</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          <div class="p-6 rounded-medium" style="background-color: var(--surface-container); color: var(--on-surface);">
+            <h3 class="text-titleMedium mb-4" style="color: var(--secondary);">Display & Headline</h3>
+            <div class="space-y-4">
+              <p class="text-displayLarge">Display Large</p>
+              <p class="text-displayMedium">Display Medium</p>
+              <p class="text-displaySmall">Display Small</p>
+              <p class="text-headlineLarge">Headline Large</p>
+              <p class="text-headlineMedium">Headline Medium</p>
+              <p class="text-headlineSmall">Headline Small</p>
+            </div>
+          </div>
+          <div class="p-6 rounded-medium" style="background-color: var(--surface-container); color: var(--on-surface);">
+            <h3 class="text-titleMedium mb-4" style="color: var(--secondary);">Title, Body & Label</h3>
+            <div class="space-y-4">
+              <p class="text-titleLarge">Title Large</p>
+              <p class="text-titleMedium">Title Medium</p>
+              <p class="text-titleSmall">Title Small</p>
+              <p class="text-bodyLarge">Body Large</p>
+              <p class="text-bodyMedium">Body Medium</p>
+              <p class="text-bodySmall">Body Small</p>
+              <p class="text-labelLarge">Label Large</p>
+              <p class="text-labelMedium">Label Medium</p>
+              <p class="text-labelSmall">Label Small</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Colors Section -->
+      <section class="mb-16">
+        <h2 class="text-headlineMedium mb-6" style="color: var(--primary);">Color Palette</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
+          <!-- Primary Colors -->
+          <div class="flex flex-col h-32 rounded-medium overflow-hidden">
+            <div class="flex-grow flex items-center justify-center" style="background-color: var(--primary); color: var(--on-primary);">
+              <span class="text-labelLarge">Primary</span>
+            </div>
+            <div class="p-2 text-center text-labelMedium" style="background-color: var(--surface-container); color: var(--on-surface);">
+              Light: #205781<br>Dark: #98D2C0
+            </div>
+          </div>
+          
+          <div class="flex flex-col h-32 rounded-medium overflow-hidden">
+            <div class="flex-grow flex items-center justify-center" style="background-color: var(--secondary); color: var(--on-secondary);">
+              <span class="text-labelLarge">Secondary</span>
+            </div>
+            <div class="p-2 text-center text-labelMedium" style="background-color: var(--surface-container); color: var(--on-surface);">
+              Light: #4F959D<br>Dark: #D89216
+            </div>
+          </div>
+          
+          <div class="flex flex-col h-32 rounded-medium overflow-hidden">
+            <div class="flex-grow flex items-center justify-center" style="background-color: var(--primary-container); color: var(--on-primary-container);">
+              <span class="text-labelLarge">Primary Container</span>
+            </div>
+            <div class="p-2 text-center text-labelMedium" style="background-color: var(--surface-container); color: var(--on-surface);">
+              Light: #98D2C0<br>Dark: #374045
+            </div>
+          </div>
+          
+          <div class="flex flex-col h-32 rounded-medium overflow-hidden">
+            <div class="flex-grow flex items-center justify-center" style="background-color: var(--secondary-container); color: var(--on-secondary-container);">
+              <span class="text-labelLarge">Secondary Container</span>
+            </div>
+            <div class="p-2 text-center text-labelMedium" style="background-color: var(--surface-container); color: var(--on-surface);">
+              Light: #F6F8D5<br>Dark: #374045
+            </div>
+          </div>
+          
+          <div class="flex flex-col h-32 rounded-medium overflow-hidden">
+            <div class="flex-grow flex items-center justify-center" style="background-color: var(--background); color: var(--on-background);">
+              <span class="text-labelLarge">Background</span>
+            </div>
+            <div class="p-2 text-center text-labelMedium" style="background-color: var(--surface-container); color: var(--on-surface);">
+              Light: #F6F8D5<br>Dark: #2C061F
+            </div>
+          </div>
+          
+          <div class="flex flex-col h-32 rounded-medium overflow-hidden">
+            <div class="flex-grow flex items-center justify-center" style="background-color: var(--surface); color: var(--on-surface);">
+              <span class="text-labelLarge">Surface</span>
+            </div>
+            <div class="p-2 text-center text-labelMedium" style="background-color: var(--surface-container); color: var(--on-surface);">
+              Light: #F6F8D5<br>Dark: #2C061F
+            </div>
+          </div>
+          
+          <div class="flex flex-col h-32 rounded-medium overflow-hidden">
+            <div class="flex-grow flex items-center justify-center" style="background-color: var(--surface-container); color: var(--on-surface);">
+              <span class="text-labelLarge">Surface Container</span>
+            </div>
+            <div class="p-2 text-center text-labelMedium" style="background-color: var(--surface-container); color: var(--on-surface);">
+              Light: #E8EACB<br>Dark: #321B2A
+            </div>
+          </div>
+          
+          <div class="flex flex-col h-32 rounded-medium overflow-hidden">
+            <div class="flex-grow flex items-center justify-center text-center px-2" style="background-color: var(--on-background); color: var(--background);">
+              <span class="text-labelLarge">On Background</span>
+            </div>
+            <div class="p-2 text-center text-labelMedium" style="background-color: var(--surface-container); color: var(--on-surface);">
+              Light: #121212<br>Dark: #E1D89F
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Components Section -->
+      <section class="mb-16">
+        <h2 class="text-headlineMedium mb-6" style="color: var(--primary);">UI Components</h2>
+        
+        <!-- Cards -->
+        <h3 class="text-titleMedium mb-4" style="color: var(--secondary);">Cards</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          <!-- Card 1 -->
+          <div class="card rounded-medium overflow-hidden shadow-elevation2" style="background-color: var(--surface); color: var(--on-surface);">
+            <div class="h-40 flex items-center justify-center" style="background-color: var(--primary);">
+              <span class="text-displaySmall" style="color: var(--on-primary);">01</span>
+            </div>
+            <div class="p-6">
+              <h4 class="text-titleMedium mb-2">Card Title</h4>
+              <p class="text-bodyMedium mb-4">This is a sample card with primary color accent.</p>
+              <button class="btn text-labelMedium px-4 py-2 rounded-full" style="background-color: var(--primary-container); color: var(--on-primary-container);">Learn More</button>
+            </div>
+          </div>
+          
+          <!-- Card 2 -->
+          <div class="card rounded-medium overflow-hidden shadow-elevation2" style="background-color: var(--surface); color: var(--on-surface);">
+            <div class="h-40 flex items-center justify-center" style="background-color: var(--secondary);">
+              <span class="text-displaySmall" style="color: var(--on-secondary);">02</span>
+            </div>
+            <div class="p-6">
+              <h4 class="text-titleMedium mb-2">Card Title</h4>
+              <p class="text-bodyMedium mb-4">This is a sample card with secondary color accent.</p>
+              <button class="btn text-labelMedium px-4 py-2 rounded-full" style="background-color: var(--secondary-container); color: var(--on-secondary-container);">Learn More</button>
+            </div>
+          </div>
+          
+          <!-- Card 3 -->
+          <div class="card rounded-medium overflow-hidden shadow-elevation2" style="background-color: var(--surface); color: var(--on-surface);">
+            <div class="h-40 flex items-center justify-center" style="background-color: var(--tertiary);">
+              <span class="text-displaySmall" style="color: var(--on-tertiary);">03</span>
+            </div>
+            <div class="p-6">
+              <h4 class="text-titleMedium mb-2">Card Title</h4>
+              <p class="text-bodyMedium mb-4">This is a sample card with tertiary color accent.</p>
+              <button class="btn text-labelMedium px-4 py-2 rounded-full" style="background-color: var(--tertiary-container); color: var(--on-tertiary-container);">Learn More</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Buttons -->
+        <h3 class="text-titleMedium mb-4" style="color: var(--secondary);">Buttons</h3>
+        <div class="flex flex-wrap gap-4 mb-12">
+          <button class="btn px-6 py-3 rounded-full text-labelLarge" style="background-color: var(--primary); color: var(--on-primary);">Primary Button</button>
+          <button class="btn px-6 py-3 rounded-full text-labelLarge" style="background-color: var(--secondary); color: var(--on-secondary);">Secondary Button</button>
+          <button class="btn px-6 py-3 rounded-full text-labelLarge" style="background-color: var(--primary-container); color: var(--on-primary-container);">Primary Container</button>
+          <button class="btn px-6 py-3 rounded-full text-labelLarge" style="background-color: var(--secondary-container); color: var(--on-secondary-container);">Secondary Container</button>
+          <button class="btn px-6 py-3 rounded-full text-labelLarge border" style="border-color: var(--outline); color: var(--on-surface);">Outlined Button</button>
+          <button class="btn px-6 py-3 rounded-full text-labelLarge" style="color: var(--primary);">Text Button</button>
+        </div>
+        
+        <!-- Form Elements -->
+        <h3 class="text-titleMedium mb-4" style="color: var(--secondary);">Form Elements</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <div class="p-6 rounded-medium" style="background-color: var(--surface-container); color: var(--on-surface);">
+            <form>
+              <div class="mb-4">
+                <label class="block text-labelMedium mb-2" for="username">Username</label>
+                <input type="text" id="username" class="w-full px-4 py-2 rounded-small border text-bodyMedium" 
+                       style="background-color: var(--surface); border-color: var(--outline); color: var(--on-surface);"
+                       placeholder="Enter your username">
+              </div>
+              <div class="mb-4">
+                <label class="block text-labelMedium mb-2" for="email">Email</label>
+                <input type="email" id="email" class="w-full px-4 py-2 rounded-small border text-bodyMedium" 
+                       style="background-color: var(--surface); border-color: var(--outline); color: var(--on-surface);"
+                       placeholder="Enter your email">
+              </div>
+              <div class="mb-6">
+                <label class="block text-labelMedium mb-2" for="message">Message</label>
+                <textarea id="message" rows="4" class="w-full px-4 py-2 rounded-small border text-bodyMedium" 
+                          style="background-color: var(--surface); border-color: var(--outline); color: var(--on-surface);"
+                          placeholder="Enter your message"></textarea>
+              </div>
+              <button type="submit" class="btn px-6 py-3 rounded-full text-labelLarge" 
+                      style="background-color: var(--primary); color: var(--on-primary);">Submit</button>
+            </form>
+          </div>
+          <div class="p-6 rounded-medium" style="background-color: var(--surface-container); color: var(--on-surface);">
+            <div class="mb-4">
+              <p class="text-labelMedium mb-2">Checkbox Example</p>
+              <div class="flex items-center gap-2 mb-2">
+                <input type="checkbox" id="checkbox1" class="w-5 h-5 accent-current" style="accent-color: var(--primary);">
+                <label for="checkbox1" class="text-bodyMedium">Option 1</label>
+              </div>
+              <div class="flex items-center gap-2 mb-2">
+                <input type="checkbox" id="checkbox2" class="w-5 h-5 accent-current" style="accent-color: var(--primary);">
+                <label for="checkbox2" class="text-bodyMedium">Option 2</label>
+              </div>
+              <div class="flex items-center gap-2">
+                <input type="checkbox" id="checkbox3" class="w-5 h-5 accent-current" style="accent-color: var(--primary);">
+                <label for="checkbox3" class="text-bodyMedium">Option 3</label>
+              </div>
+            </div>
+            <div class="mb-4">
+              <p class="text-labelMedium mb-2">Radio Example</p>
+              <div class="flex items-center gap-2 mb-2">
+                <input type="radio" name="radio" id="radio1" class="w-5 h-5 accent-current" style="accent-color: var(--primary);">
+                <label for="radio1" class="text-bodyMedium">Option 1</label>
+              </div>
+              <div class="flex items-center gap-2 mb-2">
+                <input type="radio" name="radio" id="radio2" class="w-5 h-5 accent-current" style="accent-color: var(--primary);">
+                <label for="radio2" class="text-bodyMedium">Option 2</label>
+              </div>
+              <div class="flex items-center gap-2">
+                <input type="radio" name="radio" id="radio3" class="w-5 h-5 accent-current" style="accent-color: var(--primary);">
+                <label for="radio3" class="text-bodyMedium">Option 3</label>
+              </div>
+            </div>
+            <div>
+              <p class="text-labelMedium mb-2">Toggle Example</p>
+              <div class="flex items-center gap-2">
+                <label for="toggle" class="text-bodyMedium">Dark Mode</label>
+                <div class="relative inline-block w-12 h-6 rounded-full transition-colors" 
+                     style="background-color: var(--primary-container);">
+                  <input type="checkbox" id="toggle" class="sr-only peer">
+                  <span class="absolute left-1 top-1 w-4 h-4 rounded-full transition-transform peer-checked:translate-x-6" 
+                        style="background-color: var(--primary);"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Shadow Elevation Section -->
+      <section class="mb-16">
+        <h2 class="text-headlineMedium mb-6" style="color: var(--primary);">Shadow Elevations</h2>
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+          <div class="aspect-square rounded-medium flex items-center justify-center shadow-elevation1 text-labelMedium" style="background-color: var(--surface); color: var(--on-surface);">
+            Elevation 1
+          </div>
+          <div class="aspect-square rounded-medium flex items-center justify-center shadow-elevation2 text-labelMedium" style="background-color: var(--surface); color: var(--on-surface);">
+            Elevation 2
+          </div>
+          <div class="aspect-square rounded-medium flex items-center justify-center shadow-elevation3 text-labelMedium" style="background-color: var(--surface); color: var(--on-surface);">
+            Elevation 3
+          </div>
+          <div class="aspect-square rounded-medium flex items-center justify-center shadow-elevation4 text-labelMedium" style="background-color: var(--surface); color: var(--on-surface);">
+            Elevation 4
+          </div>
+          <div class="aspect-square rounded-medium flex items-center justify-center shadow-elevation5 text-labelMedium" style="background-color: var(--surface); color: var(--on-surface);">
+            Elevation 5
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8" style="background-color: var(--primary-container); color: var(--on-primary-container);">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div>
+            <h2 class="text-titleLarge mb-2">Theme Showcase</h2>
+            <p class="text-bodyMedium">A beautiful implementation of your custom theme.</p>
+          </div>
+          <div class="flex gap-4">
+            <button class="btn px-4 py-2 rounded-full text-labelMedium" style="background-color: var(--primary); color: var(--on-primary);">Contact</button>
+            <button class="btn px-4 py-2 rounded-full text-labelMedium" style="background-color: var(--secondary); color: var(--on-secondary);">About</button>
+          </div>
+        </div>
+        <div class="mt-8 pt-4 border-t text-center text-bodySmall" style="border-color: var(--outline);">
+          © 2025 Theme Showcase. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    
+    themeToggle.addEventListener('click', () => {
+      if (body.classList.contains('theme-light')) {
+        body.classList.remove('theme-light');
+        body.classList.add('theme-dark');
+        themeToggle.textContent = 'Light Theme';
+      } else {
+        body.classList.remove('theme-dark');
+        body.classList.add('theme-light');
+        themeToggle.textContent = 'Dark Theme';
+      }
+    });
+    
+    // Initialize toggle button text
+    themeToggle.textContent = body.classList.contains('theme-light') ? 'Dark Theme' : 'Light Theme';
+    
+    // Form interaction for demonstration
+    const formInputs = document.querySelectorAll('input, textarea');
+    formInputs.forEach(input => {
+      input.addEventListener('focus', () => {
+        input.style.borderColor = getComputedStyle(document.documentElement).getPropertyValue('--primary');
+      });
+      
+      input.addEventListener('blur', () => {
+        input.style.borderColor = getComputedStyle(document.documentElement).getPropertyValue('--outline');
+      });
+    });
+    
+    // Toggle interaction
+    const toggle = document.getElementById('toggle');
+    toggle.addEventListener('change', () => {
+      if (toggle.checked) {
+        body.classList.remove('theme-light');
+        body.classList.add('theme-dark');
+        themeToggle.textContent = 'Light Theme';
+      } else {
+        body.classList.remove('theme-dark');
+        body.classList.add('theme-light');
+        themeToggle.textContent = 'Dark Theme';
+      }
+    });
+  </script>
+</body>
+</html>
